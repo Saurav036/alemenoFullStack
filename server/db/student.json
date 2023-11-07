@@ -1,1 +1,58 @@
-[{"rollNumber":110,"username":"bhupendra jogi","password":"$2b$10$XHTqOiDqQKzlae2xOXErde.AsTlYiJ.2VgDlWGvoIAwkRz4FtROtS","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJodXBlbmRyYSBqb2dpIiwiaWF0IjoxNjk4OTYzMzE1LCJleHAiOjE2OTg5NjMzNTV9.kdftCmrrRp_dO_XMHhVlKbmMjo0CiGmlZS-dxWs3Yt8","enrolledIn":[{"id":"c1","completed":[{"sid":101,"progress":100},{"sid":102,"progress":60}],"startDate":"1 october 2023"}],"email":"bhupendra_jogi@usa.com"}]
+[
+  {
+    "rollNumber": 110,
+    "username": "bhupendra jogi",
+    "password": "$2b$10$XHTqOiDqQKzlae2xOXErde.AsTlYiJ.2VgDlWGvoIAwkRz4FtROtS",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJodXBlbmRyYSBqb2dpIiwiaWF0IjoxNjk5MzM2MzU5LCJleHAiOjE3ODU3MzYzNTl9.qetdKbN1cs6EwhsKPP3qNAux_XMolfmdF70gLS3ndes",
+    
+    "enrolledIn": [
+        {
+          "id": "c1",
+          "name": "Learn Python in 4 weeks",
+          "completed": [
+            {
+              "sid": 101,
+              "week": 1,
+              "progress": 100,
+              "topic": "Introduction to React Native",
+              "content":
+                "Overview of React Native, setting up your development environment."
+            },
+            {
+              "sid": 102,
+              "week": 2,
+              "progress": 70,
+              "topic": "Building Your First App",
+              "content":
+                "Creating a simple mobile app using React Native components."
+            }
+          ],
+          "startDate": "1 october 2023"
+        },
+        {
+          "id": "c2",
+          "name": "Introduction to React Native",
+          "completed": [
+            {
+              "sid": 101,
+              "week": 1,
+              "progress": 37,
+              "topic": "Introduction to React Native",
+              "content":
+                "Overview of React Native, setting up your development environment."
+            },
+            {
+              "sid": 102,
+              "week": 2,
+              "progress": 47,
+              "topic": "Building Your First App",
+              "content":
+                "Creating a simple mobile app using React Native components."
+            }
+          ],
+          "startDate": "1 october 2023"
+        }
+      ],
+    "email": "bhupendra_jogi@usa.com"
+  }
+]

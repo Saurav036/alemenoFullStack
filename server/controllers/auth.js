@@ -28,14 +28,14 @@ const handleLogin = async (req, res) => {
       { username: foundUser.username },
       //   process.env.ACCESS_TOKEN_SECRET,
       "mysecret",
-      { expiresIn: "20s" }
+      { expiresIn: 1000*60*60*24 }
     );
 
     const refreshToken = jwt.sign(
      {username:foundUser.username},
       //   process.env.REFRESH_TOKEN_SECRET,
       "myrefresh",
-      { expiresIn: "40s" }
+      { expiresIn: 1000*60*60*24 }
     );
     // Saving refreshToken with current user
     const otherUsers = usersDB.users.filter(
@@ -52,9 +52,9 @@ const handleLogin = async (req, res) => {
     );
     res.cookie("jwt", refreshToken, {
       httpOnly: true,
-      sameSite: "None",
+      sameSite: "Lax",
       secure: false,
-      maxAge: 30000,
+      maxAge: 1000*60*60*24,
     });
     res.json({ success: true, token: accessToken });
   } else {
@@ -121,10 +121,10 @@ const handleNewUser = async (req, res) => {
 
 const handleRefreshToken = (req, res) => {
   const cookies = req.cookies;
-//   console.log("cookies", cookies);
+  console.log("cookies", JSON.stringify(cookies));
   if (!cookies?.jwt) return res.sendStatus(401);
   const refreshToken = cookies.jwt;
-  console.log("refreshing token", refreshToken);
+  // console.log("refreshing token", refreshToken);
   const foundUser = usersDB.users.find(
     (person) => person.refreshToken === refreshToken
   );
@@ -133,13 +133,13 @@ const handleRefreshToken = (req, res) => {
   // evaluate jwt
   jwt.verify(refreshToken, 'myrefresh', (err, decoded) => {
     if (err || foundUser.username !== decoded.username){
-console.log(err, decoded)
+// console.log(err, decoded)
         return res.sendStatus(403);
     }
     const accessToken = jwt.sign(
       { username: decoded.username },
       'mysecret',
-      { expiresIn: "30s" }
+      { expiresIn: "5s" }
     );
     res.json({ accessToken });
   });
