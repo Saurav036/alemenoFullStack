@@ -10,7 +10,7 @@ export default function CustomCard(props) {
       className="w-74 max-w-74 rounded-2xl  bg-white shadow-lg"
     >
         <img className='rounded-t-2xl mb-2'width={250} height={85}src={props?.thumbnail}></img>
-      <Link to={props.id}>
+      <Link to={`/course/${props.id}`}>
         <h5 className="px-4 text-lg font-medium tracking-tight text-gray-900 dark:text-white">
          {props?.name}
         </h5>

@@ -29,9 +29,7 @@ const Login = () => {
   withCredentials:true},{withCredentials:true})
     let res = await response.json()
     console.log(res)
-    // if(!res) throw `login failed`
-    // let userInfo = decodeJwt(res.data.accessToken)
-    // console.log('user info is here ', userInfo)
+    
     if(res?.token){
 // console.log('trying to dispatch ', res?.data)
       dispatch(setAuthInfo(res))
@@ -41,7 +39,7 @@ const Login = () => {
     // alert(JSON.stringify(res))
   }
   return (
-    <div className="flex justify-center items-center p-8 pt-20">
+    <div className="flex justify-center items-center w-full pt-20">
       <div className="flex justify-center shadow-md rounded-2xl border h-[70vh] w-[70vw]">
         <div
           className="h-full w-full bg-clip-border"

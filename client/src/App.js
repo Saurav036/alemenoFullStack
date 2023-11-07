@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import CourseList from "./components/CourseList";
 import Courses from "./pages/Courses";
 import CourseDetailPage from "./pages/CourseDetailPage";
+import ProfileBar from "./components/ProfileBar";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="courses/:id" element={<CourseDetailPage/>} />
           {/* </Route> */}
       </Routes>
+      <ProfileBar/>
     </div>
   );
 }

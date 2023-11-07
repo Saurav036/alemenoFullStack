@@ -13,7 +13,7 @@ const Navbar = () => {
       }else{setVisible(true)}
     
       
-    }, [])
+    }, [location])
     
 
   return visible &&
